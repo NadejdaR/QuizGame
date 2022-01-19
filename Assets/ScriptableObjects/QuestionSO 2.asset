@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7257f7ae2ebac7e4faba6bbfd0853cae, type: 3}
+  m_Name: QuestionSO 2
+  m_EditorClassIdentifier: 
+  QuestionTxt: Which company this logo?
+  QuestionImg: {fileID: 21300000, guid: b99a96a02a2f3e1408e020f0e0716dc0, type: 3}
+  Answers:
+  - Blizzard
+  - Naughty Dog
+  - Ubisoft
+  - Valve
+  CorrectAns: Ubisoft

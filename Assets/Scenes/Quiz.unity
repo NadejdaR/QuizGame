@@ -1560,6 +1560,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca4280e06ae5f384ba69c67ffaa3cca7, type: 2}
   - {fileID: 11400000, guid: aeb61d3495de1ab45a3d3d6f0d508cb2, type: 2}
   - {fileID: 11400000, guid: d0ada64a736c596438e417992bf8fb0b, type: 2}
+  - {fileID: 11400000, guid: ea468a18c6197e340a54a7fa70dbf0a2, type: 2}
+  - {fileID: 11400000, guid: 1b305314053417241ba7e184187d1545, type: 2}
+  - {fileID: 11400000, guid: 2a9b2f620909c5d43ada9a814cbb2846, type: 2}
+  - {fileID: 11400000, guid: e10f8a451f7986f4882a18d0716d5b20, type: 2}
   _questionInfoTxt: {fileID: 719413842}
   _questionInfoImg: {fileID: 43527687}
   _answersBtn:

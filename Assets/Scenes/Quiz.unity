@@ -1564,6 +1564,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b305314053417241ba7e184187d1545, type: 2}
   - {fileID: 11400000, guid: 2a9b2f620909c5d43ada9a814cbb2846, type: 2}
   - {fileID: 11400000, guid: e10f8a451f7986f4882a18d0716d5b20, type: 2}
+  - {fileID: 11400000, guid: 801f9302aea9fad4ebe6d27c58ccd992, type: 2}
+  - {fileID: 11400000, guid: 266ec46497a2e1a4fa1427a168f0d42b, type: 2}
+  - {fileID: 11400000, guid: 5e90f903370386d4ba2c40ea0b49332a, type: 2}
   _questionInfoTxt: {fileID: 719413842}
   _questionInfoImg: {fileID: 43527687}
   _answersBtn:

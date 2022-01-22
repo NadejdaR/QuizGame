@@ -13,6 +13,7 @@ public class QuizManager : MonoBehaviour
   [SerializeField] private PlayerStat _playerStat;
   [SerializeField] private List<Image> _lifeImg;
   [SerializeField] private Button _helpBtn;
+  [SerializeField] private Color correctCol, wrongCol, normalCol;
 
   private QuestionSO _selectedQuestion;
   private bool _isGameOver;
@@ -53,7 +54,7 @@ public class QuizManager : MonoBehaviour
     }
   }
 
-  public void ShowAllButtons()
+  private void ShowAllButtons()
   {
     foreach (Button t in _answersBtn)
     {
@@ -85,6 +86,8 @@ public class QuizManager : MonoBehaviour
     {
       _answersTxt[i].text = ansOptions[i];
       _answersBtn[i].name = ansOptions[i];
+      _answersBtn[i].image.color = normalCol;
+
     }
 
     _isAnswered = false;
@@ -96,6 +99,7 @@ public class QuizManager : MonoBehaviour
       return;
     _isAnswered = true;
     bool val = Answer(btn.name);
+    btn.image.color = val ? correctCol : wrongCol;
   }
 
   private bool Answer(string selectedOption)
@@ -104,7 +108,6 @@ public class QuizManager : MonoBehaviour
     if (_selectedQuestion.CorrectAns == selectedOption)
     {
       _playerStat.correctAns++;
-
       correct = true;
     }
     else

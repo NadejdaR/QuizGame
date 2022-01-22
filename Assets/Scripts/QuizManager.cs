@@ -20,6 +20,7 @@ public class QuizManager : MonoBehaviour
   private int _lifes;
   private int _showingAns;
   private int _numberHiddenButtons = 2;
+  private int _currentIndex;
 
   private void Start()
   {
@@ -41,22 +42,22 @@ public class QuizManager : MonoBehaviour
   {
     for (int i = 0; i < _answersBtn.Count; i++)
     {
-      if (_numberHiddenButtons <= 0) 
+      if (_numberHiddenButtons <= 0)
         continue;
       if (_selectedQuestion.Answers[i] == _selectedQuestion.CorrectAns)
         continue;
 
-      _answersBtn[i].GetComponent<Button>().interactable = false ;
+      _answersBtn[i].GetComponent<Button>().interactable = false;
 
-      _numberHiddenButtons --;
+      _numberHiddenButtons--;
     }
   }
-  
+
   public void ShowAllButtons()
   {
     foreach (Button t in _answersBtn)
     {
-      t.GetComponent<Button>().interactable =true;
+      t.GetComponent<Button>().interactable = true;
       _numberHiddenButtons = 2;
     }
   }
@@ -68,8 +69,8 @@ public class QuizManager : MonoBehaviour
 
   private void SelectQuestion()
   {
-    int val = Random.Range(0, _quizList.Count);
-    _selectedQuestion = _quizList[val];
+    _currentIndex = Random.Range(0, _quizList.Count);
+    _selectedQuestion = _quizList[_currentIndex];
     SetQuestion(_selectedQuestion);
   }
 
@@ -125,6 +126,7 @@ public class QuizManager : MonoBehaviour
     else
       Invoke(nameof(GameEnd), 0.4f);
 
+    _quizList.RemoveAt(_currentIndex);
     return correct;
   }
 

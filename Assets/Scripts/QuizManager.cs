@@ -12,12 +12,14 @@ public class QuizManager : MonoBehaviour
   [SerializeField] private List<Text> _answersTxt;
   [SerializeField] private PlayerStat _playerStat;
   [SerializeField] private List<Image> _lifeImg;
+  [SerializeField] private Button _helpBtn;
 
   private QuestionSO _selectedQuestion;
   private bool _isGameOver;
   private bool _isAnswered;
   private int _lifes;
   private int _showingAns;
+  private int _numberHiddenButtons = 2;
 
   private void Start()
   {
@@ -25,6 +27,7 @@ public class QuizManager : MonoBehaviour
     _lifes = 3;
     _playerStat.correctAns = 0;
     _playerStat.wrongAns = 0;
+    _helpBtn.onClick.AddListener(HelpClick);
     foreach (Button localBtn in _answersBtn)
     {
       Button btn = localBtn;
@@ -32,6 +35,30 @@ public class QuizManager : MonoBehaviour
     }
 
     SelectQuestion();
+  }
+
+  private void HelpClick()
+  {
+    for (int i = 0; i < _answersBtn.Count; i++)
+    {
+      if (_numberHiddenButtons <= 0) 
+        continue;
+      if (_selectedQuestion.Answers[i] == _selectedQuestion.CorrectAns)
+        continue;
+
+      _answersBtn[i].GetComponent<Button>().interactable = false ;
+
+      _numberHiddenButtons --;
+    }
+  }
+  
+  public void ShowAllButtons()
+  {
+    foreach (Button t in _answersBtn)
+    {
+      t.GetComponent<Button>().interactable =true;
+      _numberHiddenButtons = 2;
+    }
   }
 
   private void ReduceLife(int remainingLife)
@@ -48,6 +75,7 @@ public class QuizManager : MonoBehaviour
 
   private void SetQuestion(QuestionSO question)
   {
+    ShowAllButtons();
     _questionInfoTxt.text = question.QuestionTxt;
     _questionInfoImg.sprite = question.QuestionImg;
 

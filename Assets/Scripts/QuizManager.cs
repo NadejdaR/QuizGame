@@ -48,7 +48,7 @@ public class QuizManager : MonoBehaviour
       if (_selectedQuestion.Answers[i] == _selectedQuestion.CorrectAns)
         continue;
 
-      _answersBtn[i].GetComponent<Button>().interactable = false;
+      _answersBtn[i].interactable = false;
 
       _numberHiddenButtons--;
     }
@@ -58,7 +58,7 @@ public class QuizManager : MonoBehaviour
   {
     foreach (Button t in _answersBtn)
     {
-      t.GetComponent<Button>().interactable = true;
+      t.interactable = true;
       _numberHiddenButtons = 2;
     }
   }
